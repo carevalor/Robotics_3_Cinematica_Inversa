@@ -48,7 +48,7 @@ if str=='a'
         end
         q=curveSolve(start);
         q=q*180/pi
-        move(q)
+        moveid(q)
     end
  
     if str=='s'
@@ -60,6 +60,8 @@ if str=='a'
     end
 ```
 Para la tecla 'd' la estructura es similar pero se cambian las direcciones de los cambios. Nótese que se utilizan varios if anidados para revisar en que valor está la variable 'tr' la cuál indica que movimiento se está realizando. Si la variables es 1, sera translación en x, 2 para translación en y, 3 para la translación en z y 4 para rotación en Open. Para las teclas 's' y 'w' se cambian estos valores para cambiar el tipo de movimiento.
+
+La función curvesolve() recibe la matriz homogenea que representa la pose del robot y realiza la cinemática inversa desarrollada previamente para obtener cada ángulo. Por otra parte, la función moveid() envía los valores al servicio para mover el robot. Dentro de esta función se utiliza la función mapfun() utilizada previamente que realiza un mapeo de los ángulos posibles del motor y la resolución del encoder.  
 
 La función check utilizada es para revisar en que valor se encuentra la variable 'tr' y de acuerdo a dicho valor se imprima en consola que tipo de movimiento se va a realizar
 
