@@ -82,7 +82,8 @@ Para realizar el movimiento en x y o z se modifican las posiciones (1,4),(2,4) y
 
 
 ```matlab
-start(1,4)=start(3,4)+5; % Para x
-start(2,4)=start(3,4)+5; % Para y
+start(1,4)=start(1,4)+5; % Para x
+start(2,4)=start(2,4)+5; % Para y
 start(3,4)=start(3,4)+5; % Para z
 ```
+El valor que se le va a sumar o restar a la matriz es la distancia en milímetros que se va a transladar el robot en cada dirección.
