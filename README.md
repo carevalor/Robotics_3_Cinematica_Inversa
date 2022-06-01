@@ -31,4 +31,58 @@ while(t>0)
     end
 end
 ```
-Dentro del ciclo while previamente descrito, se revisa todo el tiempo que caracter fue guardado por el usuario dentro de la variable 'str'. De esta forma, si la variable es 'd' 
+Dentro del ciclo while previamente descrito, se revisa todo el tiempo que caracter fue guardado por el usuario dentro de la variable 'str'. De esta forma, si la variable es 'w' o 's' se va a cambiar el tipo de movimiento a realizar. Con las variables 'a' y 'd' se realiza el movimiento ya sea en positivo y en negativo.
+
+```matlab
+if str=='a'
+        if tr == 1
+            start(1,4)=start(1,4)-5;
+        elseif tr == 2
+            start(2,4)=start(2,4)-5;
+       
+        elseif tr == 3
+            start(3,4)=start(3,4)-5;
+        
+        elseif tr == 4
+            start=start*MTH;
+        end
+        q=curveSolve(start);
+        q=q*180/pi
+        move(q)
+    end
+ 
+    if str=='s'
+        tr=tr-1;
+        if tr<1
+            tr=4;
+        end
+        check(tr);
+    end
+```
+Para la tecla 'd' la estructura es similar pero se cambian las direcciones de los cambios. Nótese que se utilizan varios if anidados para revisar en que valor está la variable 'tr' la cuál indica que movimiento se está realizando. Si la variables es 1, sera translación en x, 2 para translación en y, 3 para la translación en z y 4 para rotación en Open. Para las teclas 's' y 'w' se cambian estos valores para cambiar el tipo de movimiento.
+
+La función check utilizada es para revisar en que valor se encuentra la variable 'tr' y de acuerdo a dicho valor se imprima en consola que tipo de movimiento se va a realizar
+
+```matlab
+function c = check(tr)
+
+        if tr==1
+        disp('trax')
+        elseif tr ==2
+        disp('tray')
+        elseif tr ==3
+        disp('traz')
+        elseif tr ==4
+        disp('rot')
+        end
+
+end
+```
+Para realizar el movimiento en x y o z se modifican las posiciones (1,4),(2,4) y (3,4) de la matriz homogenea que describe la pose del robot. Dicha matríz 'start' será sobreescrita para que el movimiento se de respecto a la posición inmediatamente anterior
+
+
+```matlab
+start(1,4)=start(3,4)+5; % Para x
+start(2,4)=start(3,4)+5; % Para y
+start(3,4)=start(3,4)+5; % Para z
+```
