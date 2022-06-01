@@ -1,6 +1,15 @@
 # Robotics_3_Cinematica_Inversa
 ## Matlab + Toolbox
+### Cinemática Inversa
+### Espacio de Trabajo
+### Cinemática inversa con el Toolbox
+
 ### Análisis
+ +
+ + Debido a que la parte final del manipulador serian phantom x es un robot 2 R, las dos soluciones posibles corresponden a las configuraciones de codo arriba y de codo abajo.
+ + El espacio diestro del manipulador corresponde al espacion dentro del cual el robot puede llegar en varias configuraciones de posición. En el espacio que no es diestro, el robot solo podrá llegar con una única orientación.
+
+
 ## ROS - Aplicación Pick and place
 ## ROS - Aplicación de movimiento en el espacio de la tarea
 
@@ -32,6 +41,7 @@ while(t>0)
 end
 ```
 Dentro del ciclo while previamente descrito, se revisa todo el tiempo que caracter fue guardado por el usuario dentro de la variable 'str'. De esta forma, si la variable es 'w' o 's' se va a cambiar el tipo de movimiento a realizar. Con las variables 'a' y 'd' se realiza el movimiento ya sea en positivo y en negativo.
+
 
 ```matlab
 if str=='a'
@@ -89,3 +99,7 @@ start(2,4)=start(2,4)+5; % Para y
 start(3,4)=start(3,4)+5; % Para z
 ```
 El valor que se le va a sumar o restar a la matriz es la distancia en milímetros que se va a transladar el robot en cada dirección.
+
+## Análisis
+
+## Conclusiones
