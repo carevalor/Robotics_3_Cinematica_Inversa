@@ -200,6 +200,8 @@ Sub.LatestMessage.Position;
 %%
 rosshutdown;
 ```
+Podemos ver el resultado de la implementación en el video del link a continuación:
+https://youtu.be/jckKzXpPEqo
 ## ROS - Aplicación de movimiento en el espacio de la tarea
 
 Se creó un script en matlab que lee las teclas A,W,S y D que ingresa el usuario. Con la letra W el programa cambia el tipo de movimiento, siendo este translación en x y o z y rotación en la dirección de open de la herramienta. Las letras A y D realizan cambios positivos y negativos respectivamente en estos movimiento. Utilizando la cinemática inversa previamente descrita se obtienen los ángulos de cada articulación de acuerdo a dichas posiciones para ser enviadas al robot.
@@ -288,6 +290,9 @@ start(2,4)=start(2,4)+5; % Para y
 start(3,4)=start(3,4)+5; % Para z
 ```
 El valor que se le va a sumar o restar a la matriz es la distancia en milímetros que se va a transladar el robot en cada dirección.
+Podemos ver el resultado de la implementación en los videos a continuación:
+https://youtu.be/gSCXLuk4Zoo
+https://youtu.be/y4t7BjBWGEg
 
 ## Análisis
 Durante el desarrollo de la práctica se pudo evidenciar el funcionamiento de los robots phantom x. Debido al funcionamiento de los servicios solo se puede mover una articulación a la vez. En este comportamiento radica la importancia de la interpolación en la cinemática inversa. Al tener varios puntos cercanos para unir dos posiciones, se puede garantizar que la ruta que sigue el manipulador sea en línea recta. También se observó que la velocidad con la que se realiza la ruta depende de la cantidad de puntos de la interpolación. A mayor cantidad de puntos la velocidad disminuye. Esto se debe a que la cantidad de mensajes enviados al servicio para cada articulación aumenta.
