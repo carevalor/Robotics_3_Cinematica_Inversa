@@ -85,12 +85,13 @@ Este bosquejo corresponde con el espacio alcanzable del Px100 y no incluye la po
 
 ### Cinemática inversa con el Toolbox
 
+Para realizar la cinemática inversa con el ToolBox de Peter Corke se encuentran varias opciones que pueden utilizarse para verificar que la realización de la cinemática inversa realizada corresponde al manipulador:
 
-
-
-
-
-
+ + ikine6s: Esta función realiza la cinemática inversa para un manipualdor de 6 grados de libertad con muñeca esférica. 
+ + ikine:Realiza la cinemática inversa usando un método numérico iterativo.
+ + ikune:Realiza la cinemática inversa usando optimización.
+ + ikine_sym: Realiza la cinemática inversa analíticamente obtenida simbólicamente.
+ 
 ## ROS - Aplicación Pick and place
 
 Para la aplicación de Pick and Place se crea una función que interpola lineas rectas entre dos puntos, sin alterar la orientación de aproach, esta función se muestra acontinuación:
