@@ -290,5 +290,13 @@ start(3,4)=start(3,4)+5; % Para z
 El valor que se le va a sumar o restar a la matriz es la distancia en milímetros que se va a transladar el robot en cada dirección.
 
 ## Análisis
+Durante el desarrollo de la práctica se pudo evidenciar el funcionamiento de los robots phantom x. Debido al funcionamiento de los servicios solo se puede mover una articulación a la vez. En este comportamiento radica la importancia de la interpolación en la cinemática inversa. Al tener varios puntos cercanos para unir dos posiciones, se puede garantizar que la ruta que sigue el manipulador sea en línea recta. También se observó que la velocidad con la que se realiza la ruta depende de la cantidad de puntos de la interpolación. A mayor cantidad de puntos la velocidad disminuye. Esto se debe a que la cantidad de mensajes enviados al servicio para cada articulación aumenta.
 
+También se observó que el robot presenta cierto error de posición. Sin embargo, debido a que cada punto de la interpolación es enviado a las articulaciones como posiciones absolutas, por lo que el dicho error de posición no se acumula en cada posición enviada.
 ## Conclusiones
+ + Para asegurar que la trayectoria del robot sea en línea recta, es necesario realizar una interpolación que una el punto final e inicial.
+ + Cada punto de la interpolación representa una matriz homogenea, debido a que cada punto no solo implica una posición sino también una orientación predeterminada.
+ + Para los movimientos en z del pick and place que deben ser en linea recta, se mantiene la misma orientación de la herramienta para asegurar el correcto posicionamiento de la pieza.
+ + Para la aplicación de las teclas no se utilizó interpolación, debido a que los cambios realizados en cada dirección eran pequeños en relación a los movimientos realizados en la aplicación de Pick and Place.
+
+
