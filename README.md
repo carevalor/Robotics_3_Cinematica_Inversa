@@ -85,10 +85,10 @@ Este bosquejo corresponde con el espacio alcanzable del Px100 y no incluye la po
 
 ### Cinemática inversa con el Toolbox
 
-### Análisis
- +
- + Debido a que la parte final del manipulador serian phantom x es un robot 2 R, las dos soluciones posibles corresponden a las configuraciones de codo arriba y de codo abajo.
- + El espacio diestro del manipulador corresponde al espacion dentro del cual el robot puede llegar en varias configuraciones de posición. En el espacio que no es diestro, el robot solo podrá llegar con una única orientación.
+
+
+
+
 
 
 ## ROS - Aplicación Pick and place
